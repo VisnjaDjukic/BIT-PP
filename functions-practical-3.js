@@ -161,12 +161,130 @@ function create(a, b) {
     var s = [];
     var i;
 
-    for (i = 0; i < a.length; i++) {
+    for (i = 0; i < a; i++) {
 
         s[s.length] = b;
     }
     return s;
 }
-var test = create(5, 4);
+var test = create(3, "none");
 console.log(test);
 
+
+//7 Write a function that says whether a number is perfect.
+
+// 28 -> 28 is a perfect number. *Probaj i na drugi nacin!
+
+function perfect(a) {
+
+var i;
+var j;
+var s = [];
+var rez = 0;
+var final;
+
+
+for (i = 1; i <= a/2; i++) {
+ 
+   if (a % i == 0) {
+
+     s[s.length] = i; 
+ 
+   }
+}
+
+for (j = 0; j < s.length; j++) {
+
+    rez += s[j];
+}
+
+if (rez == a) {
+
+    final = a + " is a perfect number!";
+}
+else {
+    final = a + " is NOT a perfect number!"
+}
+
+return final;
+}
+
+var test = perfect(8128);
+console.log(test);
+
+
+//8 Write a function to find a word within a string.
+
+// 'The quick brown fox', 'fox' -> "'fox' was found 1 times"
+// 'aa, bb, cc, dd, aa', 'aa' -> "'aa' was found 2 times"
+
+function findAWord (a, b) {
+    var i;
+    var s = 0;
+    var rez;
+
+    for (i = 0; i < a.length; i++) {
+
+        if (a[i] === b[0]) {
+            
+            for (j = 0; j < b.length; j++) {
+                if (a[i + j] !== b [j]) {
+                    break;
+                }
+                
+                if (j === b.length-1) {
+                    s++;
+                }
+            }   
+        }
+        
+    }
+
+    return s;
+}
+
+var test = findAWord('aa, bb, cc, dd, aa', 'aa');
+console.log(test);
+
+
+//9 Write a function to hide email address.
+
+// "myemailaddress@bgit.rs" -> "myemail...@bgit.rs"
+
+
+function hideEmail (a) {
+
+
+    var i;
+    var j;
+    var s = 0;
+    var rez = a[0];
+
+    for (i = 0; i <= "@"; i++) {
+        
+        if (a[i] == ) {
+         
+            break;
+
+        }
+        s++;
+
+    }
+
+    for (j = 0; j < s; j++) {
+
+        rez += '*';
+
+    }
+
+return rez;
+}
+
+var test = hideEmail("visnjadjukic@hotmail.com");
+console.log(test);
+
+
+
+// Write a program to find the most frequent item of an array.
+
+// [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
