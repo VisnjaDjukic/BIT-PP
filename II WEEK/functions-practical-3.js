@@ -246,45 +246,73 @@ function findAWord (a, b) {
 var test = findAWord('aa, bb, cc, dd, aa', 'aa');
 console.log(test);
 
-
 //9 Write a function to hide email address.
 
 // "myemailaddress@bgit.rs" -> "myemail...@bgit.rs"
 
-
-function hideEmail (a) {
-
-
+function hideEmail(a) {
     var i;
     var j;
-    var s = 0;
-    var rez = a[0];
-
-    for (i = 0; i <= "@"; i++) {
-        
-        if (a[i] == ) {
-         
-            break;
-
-        }
-        s++;
-
-    }
-
-    for (j = 0; j < s; j++) {
-
-        rez += '*';
-
-    }
-
-return rez;
-}
-
-var test = hideEmail("visnjadjukic@hotmail.com");
+    var prvideo = '';
+    var drugideo = '';
+    var s;
+    var rez;
+  
+      for (i = 1; i < a.length; i++) {
+     
+          if (a[i] === '@') {
+           s = i;
+           break;
+          }
+       
+        prvideo += '.';
+      }
+      for (j = s; j < a.length; j++) {
+          drugideo += a[j];
+  
+      }
+  
+      rez = a[0] + prvideo + drugideo;
+  
+  return rez;
+  }
+  
+var test = hideEmail("visnjadj@hotmail.com");
 console.log(test);
 
 
-
-// Write a program to find the most frequent item of an array.
+//10 Write a program to find the most frequent item of an array.
 
 // [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]
+
+function mostFrequent(a) {
+
+    var a = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    var i;
+    var j;
+    var count = 0;
+    var element = 0;
+    var rez;
+    
+    for (i = 0; i < a.length; i++) {
+    
+        var tempElem = a[i];
+        var tempCount = 0;
+    
+        for (j = 0; j < a.length; j++)
+    
+            if (tempElem === a[j]) {      
+                tempCount++;
+            }
+            if (tempCount>count) {
+                element = tempElem;
+                count = tempCount;
+            }
+    
+       rez = element +" is most fequent, " + count + " times"; 
+    }
+    return rez;
+    }
+    
+    var test = mostFrequent([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]);
+    console.log(test);
