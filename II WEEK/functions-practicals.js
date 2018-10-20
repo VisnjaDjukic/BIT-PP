@@ -2,21 +2,21 @@
 
 var n = 5;
 
-var v;
-var k;
+var i;
+var j;
 var s;
 
-for (v = 0; v < n; v++) {
-  if (v == 0 || v == n - 1) {
+for (i = 0; i < n; i++) {
+  if (i == 0 || i == n - 1) {
     // zadatak: odstampati n zvezdica
     s = "";
-    for (k = 0; k < n; k++) {
+    for (j = 0; j < n; j++) {
       s = s + "*";
     }
   } else {
     // zadatak: odstampati *, n-2 blanko karaktera, *
     s = "*";
-    for (k = 1; k <= n - 2; k++) {
+    for (j = 1; j <= n - 2; j++) {
       s = s + " ";
     }
     s = s + "*";
