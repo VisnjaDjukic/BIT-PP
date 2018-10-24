@@ -64,6 +64,7 @@ var test = function (inputArrOrStr) {
 }
 console.log(test(['kafak', 2, 3, 'kafakt']));
 
+
 /* 5. Write a function that checks if the two arrays are equal. Assume that arrays are equal if they have all the same elements. Also assume that two compared arrays have the same number of elements. */
 
 function ifArraysEqual(firstArray, secondArray) {
@@ -82,15 +83,92 @@ function ifArraysEqual(firstArray, secondArray) {
     }
 }
 
-var test = ifArraysEqual([1, 2, 4], [1,2, 4]);
+var test = ifArraysEqual([1, 2, 4], [1, 2, 4]);
 console.log(test);
 
 
+/* 6. Write a function that reverses a word or sentence. Cover cases if sentence is not provided. */
+
+function reverseWordOrSentence(inputString) {
+
+    var i;
+    var newString = '';
+
+    if (inputString !== '') {
+
+        for (i = inputString.length - 1; i >= 0; i--) {
+            newString += inputString[i];
+
+        }
+        return newString;
+    }
+    else {
+        return 'Please input word or sentence!'
+    }
+}
+console.log(reverseWordOrSentence(''));
 
 
-// 6. Write a function that reverses a word or sentence. Cover cases if sentence is not provided.
 // 7. Write a function that prints out number of input arguments of the function.
+
+function numberOfArguments() {
+
+    return arguments.length;
+}
+
+var test = numberOfArguments('maja', 1, 4, 'abc', true);
+console.log(test);
+
+
 // 8. Write a function that sets some global variable to the new value.
+
+var x = 15;
+
+function setGlobalVar() {
+
+    var newValue = x;
+
+    return newValue;
+}
+console.log(setGlobalVar());
+
+
 // 9. Write a function that replaces all white spaces from string with dash (-).
-// 10.Write object representing a book, an animal and a person. Create constructor functions for
-// same entities.
+
+var replaceWhiteSpaces = function (inputString) {
+
+    var i;
+    newString = '';
+    for (i = 0; i < inputString.length; i++) {
+        if (inputString[i] === ' ') {
+            newString += '-'
+        }
+        else {
+            newString += inputString[i];
+        }
+    }
+    return newString;
+}
+console.log(replaceWhiteSpaces('ne znam sta bih mogla da napisem'));
+
+
+/* 10. Write object representing a book, an animal and a person. Create constructor functions for same entities. */
+var first = {
+
+    book: 'java script',
+    animal: 'cat',
+    person: 'Marry'
+};
+
+var Example = function (book, animal, person) {
+this.book = book;
+this.animal = animal;
+this.person = person;
+}
+
+var second = new Example ('CSS/HTML', 'dog', 'John');
+
+// console.log(first);
+// console.log(second);
+// console.log(first.animal);
+// console.log(second.person);
