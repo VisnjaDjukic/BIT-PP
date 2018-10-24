@@ -161,12 +161,12 @@ var first = {
 };
 
 var Example = function (book, animal, person) {
-this.book = book;
-this.animal = animal;
-this.person = person;
+    this.book = book;
+    this.animal = animal;
+    this.person = person;
 }
 
-var second = new Example ('CSS/HTML', 'dog', 'John');
+var second = new Example('CSS/HTML', 'dog', 'John');
 
 // console.log(first);
 // console.log(second);
