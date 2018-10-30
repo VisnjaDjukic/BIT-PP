@@ -22,22 +22,30 @@ elementDuplicate([2, 4, 7, 11, -2, 1]);
 // Output: [1, 4, 8, 9, 12, 13] 
 
 var a = [8, 13, 8, 9, 12, 8, 1, 1, 4, 13];
-a[4] = a[0];
-a[0] = undefined;
-console.log(a);
 
 var deleteDuplicate = function (inputArray) {
-    newArray = [];
-    for (var i = 0; i < inputArray.length; i++) {
-        for (var j = 0; j < newArray.length; j++) {
-            if (inputArray[i] == newArray[j]) {
+    var newArray = inputArray.sort(function (a, b) { return a - b });
+    var final = [];
+    var counter;
+    var sameElement;
+    for (var i = 0; i < newArray.length; i++) {
+        counter = 0;
+        for (var j = 0; j < final.length; j++) {
+            if (newArray[i] == final[j]) {
+                // sameElement = inputArray[i];
+                // newArray.push(sameElement);
+                counter++;
             }
         }
+        if (counter === 0) {
+            final.push(newArray[i]);
+        }
+
     }
-
-
-
+    return final;
 }
+
+console.log(deleteDuplicate([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
 
 // Write a function that checks if a given array has odd number of elements.
 // Input: [1, 2, 9, 2, 1]
