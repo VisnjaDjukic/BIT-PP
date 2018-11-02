@@ -73,10 +73,24 @@
             }
 
             return firstAbb + ' - ' + secondAbb;
-        }
+        };
 
         this.addPassenger = function (newPassenger) {
-            this.listOfPassengers.push(newPassenger);
+            if (this.listOfPassengers === []) {
+                this.listOfPassengers.push(newPassenger);
+            }
+            // treba da postoji neko vec u listi kako bi zavrteo krug
+            else {
+                for (var i = 0; i < this.listOfPassengers.length; i++) {
+                    if (newPassenger.seat != this.listOfPassengers[i].seat) {
+                        this.listOfPassengers.push(newPassenger);
+                    }
+                    else {
+                        return 'Passenger seat number already exists!'
+                    }
+                }
+            }
+
         };
 
         this.getData = function () {
@@ -90,7 +104,7 @@
             }
 
             return this.date.toLocaleDateString() + ', ' + this.newAbbForRelation() + '\n' + final;
-        }
+        };
     }
 
 
@@ -140,7 +154,7 @@
     var passenger1 = createPassenger('John', 'Snow', 1, 'b');
     var passenger2 = createPassenger('Cersei', 'Lanister', 2, 'b');
     var passenger3 = createPassenger('Daenerys', 'Targaryen', 14);
-    var passenger4 = createPassenger('Tyrion', 'Lannister');
+    var passenger4 = createPassenger('Tyrion', 'Lannister', 1, 'b');
 
     flight1.addPassenger(passenger1);
     flight1.addPassenger(passenger2);

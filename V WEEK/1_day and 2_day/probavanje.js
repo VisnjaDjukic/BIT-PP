@@ -52,3 +52,29 @@ newAbbForRelation = function () {
 
 }
 console.log(newAbbForRelation());
+
+this.relation = relation;
+this.date = date;
+
+
+
+var listOfPassengers = [];
+
+
+var addPassenger = function (newPassenger) {
+
+    if (listOfPassengers === []){
+        this.listOfPassengers.push(newPassenger);
+    }
+
+    // treba da postoji neko vec u listi kako bi zavrteo krug
+    // for (var i = 0; i < listOfPassengers.length; i++) {
+        if (newPassenger.seat != this.listOfPassengers[i].seat) {
+           this.listOfPassengers.push(newPassenger);
+        }
+        else {
+            return 'Passenger seat number already exists!'
+        }
+    }           
+
+    console.log(addPassenger('Neki cika'));

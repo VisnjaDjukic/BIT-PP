@@ -1,5 +1,5 @@
 var a = [3, 8, 11, 24, 6];
-var index = 7;
+var index = 2;
 try {
     if (typeof index != 'number') {
         var typeError = new TypeError('Index has to be a number');
